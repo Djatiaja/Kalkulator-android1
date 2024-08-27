@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+         android:layout_height="0dp"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingHorizontal="19dp"
+                android:gravity="center_vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:id="@+id/operasi"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:textAlignment="gravity"
+                    android:textSize="40sp"
+                    android:text="0" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingHorizontal="19dp"
+                android:gravity="center_vertical">
+                <TextView
+                    android:id="@+id/hasil"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:textAlignment="gravity"
+                    android:textSize="40sp"
+                    android:text="0"
+                    android:textColor="@color/hasil_color"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingHorizontal="19dp"
+                android:gravity="center_vertical">
+                <android.widget.Button
+                    android:id="@+id/backspace"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:textAlignment="gravity"
+                    android:textSize="40sp"
+                    android:elevation="0dp"
+                    android:stateListAnimator="@null"
+                    android:backgroundTint="@color/transparant"
+                    android:text="&lt;--" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:weightSum="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:gravity="fill_horizontal">
+
+            <android.widget.Button
+                android:id="@+id/tombol7"
+                android:layout_width="67dp"
+                android:layout_height="65dp"
+                android:textSize="20sp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/roundbutton"
+                android:text="7" />
+
+            <android.widget.Button
+                android:id="@+id/tombol8"
+                android:layout_width="67dp"
+                android:textSize="20sp"
+                android:layout_height="65dp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/roundbutton"
+                android:text="8" />
+
+            <android.widget.Button
+                android:id="@+id/tombol9"
+                android:layout_width="67dp"
+                android:layout_height="65dp"
+                android:layout_marginEnd="10dp"
+                android:textSize="20sp"
+                android:layout_weight="1"
+                android:background="@drawable/roundbutton"
+                android:text="9" />
+
+            <android.widget.Button
+                android:id="@+id/tombolBagi"
+                android:layout_width="67dp"
+                android:layout_height="65dp"
+                android:layout_weight="1"
+                android:background="@drawable/roundbutton"
+                android:text="/" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:gravity="center_vertical">
+
+            <android.widget.Button
+                android:id="@+id/tombol4"
+                android:layout_width="67dp"
+                android:layout_height="65dp"
+                android:layout_weight="1"
+                android:textSize="20sp"
+                android:text="4"
+                android:background="@drawable/roundbutton"
+                android:layout_marginEnd="10dp"/>
+
+            <android.widget.Button
+                android:id="@+id/tombol5"
+                android:layout_width="67dp"
+                android:layout_height="65dp"
+                android:layout_weight="1"
+                android:textSize="20sp"
+                android:text="5"
+                android:background="@drawable/roundbutton"
+                android:layout_marginEnd="10dp"/>
+
+            <android.widget.Button
+                android:id="@+id/tombol6"
+                android:layout_width="67dp"
+                android:layout_height="65dp"
+                android:layout_weight="1"
+                android:textSize="20sp"
+                android:text="6"
+                android:background="@drawable/roundbutton"
+                android:layout_marginEnd="10dp"/>
+
+            <android.widget.Button
+                android:id="@+id/tombolKali"
+                android:layout_width="67dp"
+                android:layout_height="65dp"
+                android:layout_weight="1"
+                android:textSize="20sp"
+                android:background="@drawable/roundbutton"
+                android:text="*" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:gravity="center_vertical">
+
+            <android.widget.Button
+                android:id="@+id/tombol1"
+                android:layout_width="67dp"
+                android:layout_height="65dp"
+                android:layout_weight="1"
+                android:textSize="20sp"
+                android:text="1"
+                android:background="@drawable/roundbutton"
+                android:layout_marginEnd="10dp"/>
+
+            <android.widget.Button
+                android:id="@+id/tombol2"
+                android:layout_width="67dp"
+                android:layout_height="65dp"
+                android:layout_weight="1"
+                android:textSize="20sp"
+                android:text="2"
+                android:background="@drawable/roundbutton"
+                android:layout_marginEnd="10dp"/>
+
+            <android.widget.Button
+                android:id="@+id/tombol3"
+                android:layout_width="67dp"
+                android:layout_height="65dp"
+                android:layout_weight="1"
+                android:textSize="20sp"
+                android:text="3"
+                android:background="@drawable/roundbutton"
+                android:layout_marginEnd="10dp"/>
+
+            <android.widget.Button
+                android:id="@+id/tombolTambah"
+                android:layout_width="67dp"
+                android:layout_height="65dp"
+                android:layout_weight="1"
+                android:textSize="20sp"
+                android:background="@drawable/roundbutton"
+                android:text="+" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:gravity="center_vertical">
+
+            <android.widget.Button
+                android:id="@+id/tombolHapus"
+                android:layout_width="67dp"
+                android:layout_height="65dp"
+                android:layout_weight="1"
+                android:textSize="20sp"
+                android:elevation="100dp"
+                android:text="c"
+                android:textColor="@color/red"
+                android:background="@drawable/roundbutton"
+                android:layout_marginEnd="10dp"/>
+
+            <android.widget.Button
+                android:id="@+id/tombol0"
+                android:layout_width="67dp"
+                android:layout_height="65dp"
+                android:layout_weight="1"
+                android:text="0"
+                android:textSize="20sp"
+                android:background="@drawable/roundbutton"
+                android:layout_marginEnd="10dp"/>
+
+            <android.widget.Button
+                android:id="@+id/tombolSamaDengan"
+                android:layout_width="67dp"
+                android:layout_height="65dp"
+                android:layout_weight="1"
+                android:text="="
+                android:textSize="20sp"
+                android:background="@drawable/gradient_button"
+                android:layout_marginEnd="10dp"/>
+
+            <android.widget.Button
+                android:id="@+id/tombolKurang"
+                android:layout_width="67dp"
+                android:layout_height="65dp"
+                android:layout_weight="1"
+                android:textSize="20sp"
+                android:background="@drawable/roundbutton"
+                android:text="-" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+</LinearLayout>
