@@ -10,7 +10,6 @@ class MainActivity : AppCompatActivity() {
     private val binding by lazy { ActivityMainBinding.inflate(layoutInflater)}
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
         setContentView(binding.root)
         
         val backspace: Button = binding.backspace
@@ -31,7 +30,6 @@ class MainActivity : AppCompatActivity() {
         val Button_clear: Button = binding.tombolHapus
         val Button_equals: Button = binding.tombolSamaDengan
         val mathOperator = arrayOf("+", "-", "*", "/")
-
 
         Button_0.setOnClickListener(){
             var value = binding.operasi.text.toString()
@@ -165,17 +163,15 @@ class MainActivity : AppCompatActivity() {
                 value = value.dropLast(1)
             }
             value = cal(value)
-
             binding.hasil.text = value
         }
-
     }
 
     fun cal(values: String): String{
 //        value = "1+2*3"
-        var hasil:Float
+        val hasil:Float
         val mathOperator = arrayOf("+", "-", "*", "/")
-        var stack = ArrayDeque<String>()
+        val stack = ArrayDeque<String>()
         var temp: String = ""
 
         for (value in values){
@@ -194,12 +190,18 @@ class MainActivity : AppCompatActivity() {
             stack.addLast(temp)
         }
 //        stack = [1, +, 2, *, 3]
+        val infix: ArrayDeque<String> = infixToPostfix(stack) // infix = [1, 2, 3, *, +]
 
-//        println(stack)
-        val infix: ArrayDeque<String> = infixToPostfix(stack)
+        hasil = hitungInfix(infix) // hasil = 7
 
-//        infix = [1, 2, 3, *, +]
-        stack = ArrayDeque()
+        return  hasil.toString()
+    }
+
+    fun hitungInfix(infix: ArrayDeque<String>): Float{
+        var hasil:Float
+        val mathOperator = arrayOf("+", "-", "*", "/")
+        val stack = ArrayDeque<String>()
+
         for (value in infix){
             if (!mathOperator.contains(value.toString())){
                 stack.addLast(value)
@@ -230,13 +232,14 @@ class MainActivity : AppCompatActivity() {
                 continue
             }
         }
-//        stack = [7]
 
         hasil = stack.removeLast().toFloat()
+        return hasil
 
-        return  hasil.toString()
     }
+
     fun infixToPostfix(values: ArrayDeque<String>): ArrayDeque<String> {
+
         val hasil = ArrayDeque<String>()
         val stack = ArrayDeque<String>()
         val mathOperator = arrayOf("+", "-", "*", "/")
@@ -265,6 +268,7 @@ class MainActivity : AppCompatActivity() {
         }
         return hasil
     }
+
     fun tingkatOperator(operator: String): Int{
         if (operator == "+" || operator == "-"){
             return 1
@@ -274,4 +278,5 @@ class MainActivity : AppCompatActivity() {
         }
         return 0
     }
+
 }
