@@ -2,6 +2,7 @@ package com.example.kalkulator
 
 import android.os.Bundle
 import android.widget.Button
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.kalkulator.databinding.ActivityMainBinding
 
@@ -29,6 +30,7 @@ class MainActivity : AppCompatActivity() {
         val Button_bagi: Button = binding.tombolBagi
         val Button_clear: Button = binding.tombolHapus
         val Button_equals: Button = binding.tombolSamaDengan
+
         val mathOperator = arrayOf("+", "-", "*", "/")
 
         Button_0.setOnClickListener(){
@@ -37,6 +39,7 @@ class MainActivity : AppCompatActivity() {
                 binding.operasi.text = value + "0"
             }
         }
+        
         Button_1.setOnClickListener(){
             var value = binding.operasi.text.toString()
             if (value == "0"){
@@ -112,6 +115,7 @@ class MainActivity : AppCompatActivity() {
         Button_clear.setOnClickListener {
             binding.operasi.text = "0"
         }
+
         Button_bagi.setOnClickListener(){
             var value = binding.operasi.text.toString()
             if (!mathOperator.contains(value.last().toString())){
@@ -164,6 +168,7 @@ class MainActivity : AppCompatActivity() {
             }
             value = cal(value)
             binding.hasil.text = value
+            Toast.makeText(this, value, Toast.LENGTH_SHORT).show()
         }
     }
 
